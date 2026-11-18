@@ -1,0 +1,512 @@
+{
+ "package": "left-pad",
+ "version": "1.3.0",
+ "recordedFrom": "left-pad@1.3.0",
+ "groups": [
+  {
+   "property": "pads like left-pad for any string, length and pad character",
+   "cases": [
+    {
+     "args": [
+      60663,
+      {
+       "$undef": 1
+      },
+      {
+       "$undef": 1
+      }
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "60663"
+     }
+    },
+    {
+     "args": [
+      "T3B8",
+      {
+       "$undef": 1
+      },
+      false
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "T3B8"
+     }
+    },
+    {
+     "args": [
+      99991,
+      14,
+      false
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "         99991"
+     }
+    },
+    {
+     "args": [
+      6,
+      {
+       "$undef": 1
+      },
+      0
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "6"
+     }
+    },
+    {
+     "args": [
+      46481,
+      {
+       "$undef": 1
+      },
+      null
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "46481"
+     }
+    },
+    {
+     "args": [
+      "iKe-D~UA",
+      {
+       "$undef": 1
+      },
+      {
+       "$undef": 1
+      }
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "iKe-D~UA"
+     }
+    },
+    {
+     "args": [
+      "z\"h",
+      21,
+      "\"z"
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "\"z\"z\"z\"z\"z\"z\"z\"z\"z\"z\"z\"z\"z\"z\"z\"z\"z\"zz\"h"
+     }
+    },
+    {
+     "args": [
+      "nam",
+      {
+       "$undef": 1
+      },
+      ""
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "nam"
+     }
+    },
+    {
+     "args": [
+      "3z| ##",
+      22,
+      9
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "99999999999999993z| ##"
+     }
+    },
+    {
+     "args": [
+      43485,
+      8,
+      0
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "00043485"
+     }
+    },
+    {
+     "args": [
+      "8a0bdP)",
+      {
+       "$undef": 1
+      },
+      1
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "8a0bdP)"
+     }
+    },
+    {
+     "args": [
+      "sO",
+      {
+       "$undef": 1
+      },
+      {
+       "$undef": 1
+      }
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "sO"
+     }
+    },
+    {
+     "args": [
+      "}",
+      15,
+      {
+       "$undef": 1
+      }
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "              }"
+     }
+    },
+    {
+     "args": [
+      "",
+      10,
+      ""
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "          "
+     }
+    },
+    {
+     "args": [
+      14,
+      0,
+      {
+       "$undef": 1
+      }
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "14"
+     }
+    },
+    {
+     "args": [
+      "f\\S~`",
+      -1,
+      null
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "f\\S~`"
+     }
+    },
+    {
+     "args": [
+      "lrry/9",
+      {
+       "$undef": 1
+      },
+      null
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "lrry/9"
+     }
+    },
+    {
+     "args": [
+      "e|UL",
+      {
+       "$undef": 1
+      },
+      null
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "e|UL"
+     }
+    },
+    {
+     "args": [
+      "^Q7Wj",
+      {
+       "$undef": 1
+      },
+      {
+       "$undef": 1
+      }
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "^Q7Wj"
+     }
+    },
+    {
+     "args": [
+      "/@'6hj",
+      2,
+      0
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "/@'6hj"
+     }
+    },
+    {
+     "args": [
+      "",
+      {
+       "$undef": 1
+      },
+      {
+       "$undef": 1
+      }
+     ],
+     "outcome": {
+      "ok": true,
+      "value": ""
+     }
+    },
+    {
+     "args": [
+      423,
+      {
+       "$undef": 1
+      },
+      0
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "423"
+     }
+    },
+    {
+     "args": [
+      49823,
+      {
+       "$undef": 1
+      },
+      "|"
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "49823"
+     }
+    },
+    {
+     "args": [
+      32429,
+      5,
+      ""
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "32429"
+     }
+    },
+    {
+     "args": [
+      "&}",
+      {
+       "$undef": 1
+      },
+      ""
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "&}"
+     }
+    },
+    {
+     "args": [
+      "@QD",
+      2,
+      {
+       "$undef": 1
+      }
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "@QD"
+     }
+    },
+    {
+     "args": [
+      "",
+      2,
+      {
+       "$undef": 1
+      }
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "  "
+     }
+    },
+    {
+     "args": [
+      "",
+      15,
+      ""
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "               "
+     }
+    },
+    {
+     "args": [
+      13,
+      10,
+      false
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "        13"
+     }
+    },
+    {
+     "args": [
+      "",
+      {
+       "$undef": 1
+      },
+      0
+     ],
+     "outcome": {
+      "ok": true,
+      "value": ""
+     }
+    },
+    {
+     "args": [
+      "\"",
+      12,
+      ":"
+     ],
+     "outcome": {
+      "ok": true,
+      "value": ":::::::::::\""
+     }
+    },
+    {
+     "args": [
+      "SL]jrsv",
+      {
+       "$undef": 1
+      },
+      null
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "SL]jrsv"
+     }
+    },
+    {
+     "args": [
+      "o+[",
+      {
+       "$undef": 1
+      },
+      0
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "o+["
+     }
+    },
+    {
+     "args": [
+      "",
+      {
+       "$undef": 1
+      },
+      ""
+     ],
+     "outcome": {
+      "ok": true,
+      "value": ""
+     }
+    },
+    {
+     "args": [
+      ",A$.K'",
+      11,
+      "E"
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "EEEEE,A$.K'"
+     }
+    },
+    {
+     "args": [
+      "qz",
+      {
+       "$undef": 1
+      },
+      0
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "qz"
+     }
+    },
+    {
+     "args": [
+      -992,
+      10,
+      false
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "      -992"
+     }
+    },
+    {
+     "args": [
+      ",+<",
+      {
+       "$undef": 1
+      },
+      ""
+     ],
+     "outcome": {
+      "ok": true,
+      "value": ",+<"
+     }
+    },
+    {
+     "args": [
+      32395,
+      2,
+      0
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "32395"
+     }
+    },
+    {
+     "args": [
+      -1,
+      0,
+      0
+     ],
+     "outcome": {
+      "ok": true,
+      "value": "-1"
+     }
+    }
+   ]
+  }
+ ]
+}

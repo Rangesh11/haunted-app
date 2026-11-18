@@ -1,0 +1,21 @@
+{
+  "project": "haunted-app",
+  "keepers": [
+    {
+      "package": "left-pad",
+      "version": "1.3.0",
+      "route": "replace",
+      "adoptedAt": "2026-11-18T19:42:10.539Z",
+      "branch": "graveyard/replace-left-pad",
+      "lastKnownUpstream": "1.3.0",
+      "seenAdvisories": [],
+      "decisions": [
+        {
+          "at": "2026-11-18T19:42:10.540Z",
+          "kind": "adopted",
+          "summary": "Proven replace fix drafted on graveyard/replace-left-pad (500 inputs, candidate \"repeat-exact\"). No open advisories."
+        }
+      ]
+    }
+  ]
+}
