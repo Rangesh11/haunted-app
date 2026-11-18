@@ -2,7 +2,7 @@
 // Formatting helpers for the receipt printer.
 const leftPad = require('left-pad');
 const repeat = require('repeat-string');
-const trim = require('trim');
+const trim = require('../graveyard/shims/trim.cjs');
 
 function money(cents) {
   const value = (cents / 100).toFixed(2);

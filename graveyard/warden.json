@@ -1,0 +1,23 @@
+{
+  "project": "haunted-app",
+  "keepers": [
+    {
+      "package": "trim",
+      "version": "0.0.1",
+      "route": "replace",
+      "adoptedAt": "2026-11-18T19:42:19.303Z",
+      "branch": "graveyard/replace-trim",
+      "lastKnownUpstream": "1.0.1",
+      "seenAdvisories": [
+        "GHSA-w5p7-h5w8-2hfq"
+      ],
+      "decisions": [
+        {
+          "at": "2026-11-18T19:42:19.303Z",
+          "kind": "adopted",
+          "summary": "Proven replace fix drafted on graveyard/replace-trim (2001 inputs, candidate \"native-trim\"). Advisories resolved by removal: GHSA-w5p7-h5w8-2hfq."
+        }
+      ]
+    }
+  ]
+}

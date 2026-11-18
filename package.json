@@ -17,7 +17,6 @@
     "object-assign": "4.1.1",
     "repeat-string": "1.6.1",
     "request": "2.88.2",
-    "trim": "0.0.1",
     "xtend": "4.0.2"
   }
 }
