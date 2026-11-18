@@ -2,7 +2,7 @@
 // Cart maths. Items can arrive as nested bundles.
 const flatten = require('arr-flatten');
 const isNumber = require('is-number');
-const trim = require('trim');
+const trim = require('../graveyard/shims/trim.cjs');
 
 function lineItems(bundles) {
   return flatten(bundles).filter((item) => item && isNumber(item.cents));
