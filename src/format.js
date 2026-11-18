@@ -1,6 +1,6 @@
 'use strict';
 // Formatting helpers for the receipt printer.
-const leftPad = require('left-pad');
+const leftPad = require('../graveyard/shims/left-pad.cjs');
 const repeat = require('repeat-string');
 const trim = require('trim');
 

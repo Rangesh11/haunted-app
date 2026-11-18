@@ -1,5 +1,5 @@
 // ESM entry used by the web front end.
-import leftPad from 'left-pad';
+import leftPad from '../graveyard/shims/left-pad.cjs';
 import dayjs from 'dayjs';
 
 export function stamp(date, seq) {
