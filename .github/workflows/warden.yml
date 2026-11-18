@@ -1,0 +1,62 @@
+# The Warden keeper on a schedule. Copy this file into a project that has
+# merged a Graveyard Shift fix: each fix PR adds its keeper to the committed
+# memory file graveyard/warden.json. Every night the patrol checks those
+# packages for new advisories and upstream releases. When it decides something
+# worth keeping, it saves the memory and any drafted patch on a branch and opens
+# a pull request, so the bot remembers decisions across runs and never handles
+# the same advisory twice. Quiet nights change nothing.
+name: warden-patrol
+on:
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  patrol:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install Graveyard Shift
+        run: |
+          git clone --depth 1 https://github.com/Rangesh11/graveyard-shift.git "$RUNNER_TEMP/gs"
+          npm ci --omit=dev --prefix "$RUNNER_TEMP/gs"
+      - name: Patrol
+        id: patrol
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ ! -f graveyard/warden.json ]; then
+            echo "No graveyard/warden.json yet: merge a Graveyard Shift fix first."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          node "$RUNNER_TEMP/gs/bin/graveyard.mjs" warden patrol --dir . --json > "$RUNNER_TEMP/patrol.json"
+          cat "$RUNNER_TEMP/patrol.json"
+          echo "changed=$(node -p "require(process.argv[1]).changed" "$RUNNER_TEMP/patrol.json")" >> "$GITHUB_OUTPUT"
+      - name: Save the memory and open a pull request
+        if: steps.patrol.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          shopt -s nullglob
+          branch="graveyard/warden-$(date -u +%Y%m%d-%H%M%S)"
+          body="$RUNNER_TEMP/body.md"
+          {
+            echo "The Warden patrol made decisions worth keeping. This PR saves its memory in \`graveyard/warden.json\`, so the next patrol remembers them."
+            echo
+            echo "### Patrol log"
+            node -e 'for (const m of require(process.argv[1]).events) console.log(`- ${m}`)' "$RUNNER_TEMP/patrol.json"
+            for draft in .graveyard/prs/*.md; do echo; echo "---"; echo; cat "$draft"; done
+          } > "$body"
+          mkdir -p graveyard/tasks
+          for task in .graveyard/tasks/*.md; do cp "$task" graveyard/tasks/; done
+          git switch -c "$branch"
+          git add graveyard/warden.json graveyard/tasks
+          git -c user.name="Graveyard Shift Warden" -c user.email="warden@graveyard-shift.invalid" commit -m "Warden patrol: save keeper memory"
+          git push origin "$branch"
+          gh pr create --title "Warden patrol $(date -u +%F): new decisions" --body-file "$body"
